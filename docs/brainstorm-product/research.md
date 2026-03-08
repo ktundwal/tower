@@ -5,14 +5,12 @@
 Snapshot of a typical working session:
 
 - **7 Claude Code CLI sessions** running across terminal tabs (cons0-cons7)
-- Each Claude session spawns ~3 supporting processes (agency node, workiq)
+- Each Claude session spawns ~3 supporting processes (node, MCP servers)
 - **14 VS Code processes** (window hosts + extensions)
 - **1 Copilot desktop app**
 - Total: ~70 node/agent-related processes
 
 Claude Code CLI is discoverable via `ps` as `/c/Users/{user}/bin/cc.cmd` or `claude.exe`.
-Agency wraps Claude Code (`agency claude`) and Copilot (`agency copilot`) but is not required.
-
 ## Entire.io Analysis
 
 Source: `github.com/entireio/cli` (Go, MIT, ~3.4k stars)
@@ -37,22 +35,6 @@ Source: `github.com/entireio/cli` (Go, MIT, ~3.4k stars)
 - No remote command injection
 - No "blocked on me" detection
 - No cross-session batch operations
-
-## Agency CLI Analysis (Microsoft internal, not a dependency)
-
-Source: internal Microsoft tool (`aka.ms/agency`)
-
-### What it does
-- Wrapper that launches Claude Code (`agency claude`) and Copilot CLI (`agency copilot`)
-- Adds agent loading from personal/repo/org/company sources
-- MCP server orchestration (20+ MCP servers: ADO, Kusto, ICM, Teams, Mail, etc.)
-- Structured session logs at `~/.agency/logs/session_{timestamp}_{pid}/`
-- Eval/batch mode for running agents programmatically
-
-### Architectural insight
-- Agency sits *above* Claude Code and Copilot CLI, tower sits *beside* them
-- Agency's session logs could be an additional data source but tower should not depend on agency
-- Both Claude Code and Copilot CLI are stdin/stdout terminal processes underneath, confirming the proxy approach for approvals
 
 ## Claude Code Hook System
 

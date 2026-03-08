@@ -6,7 +6,7 @@ Design a supervisor cockpit ("tower") for managing multiple concurrent AI coding
 ## How We Got Here
 
 ### Starting Point
-User (Kapil, engineering manager at Microsoft) runs 5-10+ concurrent AI coding agent sessions on a single dev box. These include Claude Code CLI, GitHub Copilot CLI, VS Code Copilot, and Agency CLI (Microsoft internal wrapper). He loses track of what each is doing, which are blocked on him, and what they accomplished.
+Developer runs 5-10+ concurrent AI coding agent sessions on a single dev box. These include Claude Code CLI, GitHub Copilot CLI, VS Code Copilot, and various tool wrappers. They lose track of what each is doing, which are blocked on them, and what they accomplished.
 
 ### Problem Refinement (Q&A)
 
@@ -14,7 +14,7 @@ User (Kapil, engineering manager at Microsoft) runs 5-10+ concurrent AI coding a
 A: Same box first. Even cloud agents (VS Code remote) would still be controlled via the dev box.
 
 **Q: How many concurrent sessions?**
-A: Process scan revealed 7 Claude Code CLI sessions, 14 VS Code processes, 1 Copilot desktop app, plus ~3 supporting processes per Claude session (agency node, workiq). About 70 agent-related processes total.
+A: Process scan revealed 7 Claude Code CLI sessions, 14 VS Code processes, 1 Copilot desktop app, plus ~3 supporting processes per Claude session (node, MCP servers). About 70 agent-related processes total.
 
 **Q: How do you find out when blocked?**
 A: Toast notifications with sound exist but are too aggressive. They overlay current work and break flow. Notification just says "claude needs attention" with no context about which session or what it needs. Then must scan windows, scroll to rebuild context.
@@ -36,7 +36,7 @@ A: Press y/n in the terminal. Claude Code doesn't expose an external API.
 A: Side-channel proxy for approvals only. Not a wrapper. When doing focus work, interact directly with the terminal. The cockpit only intercepts approval requests and can inject responses.
 
 **Q: Scope of tools?**
-A: Must be extensible for future agentic CLI tools (Kiro, Aider, Cursor, etc.). Ship v1 with Claude Code CLI, GitHub Copilot CLI, VS Code. Don't take dependency on Agency (Microsoft internal), but learn from it.
+A: Must be extensible for future agentic CLI tools (Kiro, Aider, Cursor, etc.). Ship v1 with Claude Code CLI, GitHub Copilot CLI, VS Code.
 
 ### Research Conducted
 
@@ -47,13 +47,6 @@ A: Must be extensible for future agentic CLI tools (Kiro, Aider, Cursor, etc.). 
 - Uses Claude Code's hook system (settings.json) as integration surface
 - Rewind/resume for sessions
 - Does NOT have: live dashboard, approval aggregation, batch approve, remote commands, blocked detection
-
-**Agency CLI** (Microsoft internal, aka.ms/agency):
-- Wrapper that launches Claude Code and Copilot CLI underneath
-- Adds agent loading, MCP orchestration, structured session logs
-- Session logs at ~/.agency/logs/session_{timestamp}_{pid}/
-- Confirms both Claude Code and Copilot CLI are stdin/stdout terminal processes
-- Tower should work alongside Agency, not depend on it
 
 ### Architecture Decisions Made
 

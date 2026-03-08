@@ -1,0 +1,260 @@
+{
+  "name": "six-session-mixed",
+  "description": "Synthetic mixed-session fixture for the tower-demo bootstrap harness.",
+  "sessions": [
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M01",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R01",
+      "adapter": "claude",
+      "tool": "claude-code",
+      "adapter_ref": "managed:claude",
+      "control_mode": "managed",
+      "workspace_root": "C:\\workspaces\\tower",
+      "repo_root": "C:\\workspaces\\tower",
+      "branch_name": "main",
+      "confidence": "certain",
+      "process": {
+        "executable_path": "claude-code",
+        "pid": 4100,
+        "started_at": "2026-03-06T18:00:00Z",
+        "workspace_root": "C:\\workspaces\\tower",
+        "terminal_id": "wt-1"
+      },
+      "terminal": {
+        "program": "Windows Terminal",
+        "window_session": "wt-1",
+        "device_name": "conpty",
+        "columns": 140,
+        "rows": 40
+      },
+      "lifecycle": "active",
+      "activity": "waiting_human",
+      "attention": "needs_user",
+      "task_excerpt": "Review four read-only repository status checks.",
+      "pending_action_count": 4,
+      "conflict_count": 0,
+      "last_activity_at": "2026-03-06T18:02:00Z",
+      "summary_excerpt": "Read-only approval batch candidate.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_terminal",
+          "approve",
+          "deny",
+          "respond",
+          "inject_command",
+          "park",
+          "resume",
+          "batch_read_only_approval"
+        ]
+      }
+    },
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M02",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R02",
+      "adapter": "claude",
+      "tool": "claude-code",
+      "adapter_ref": "managed:claude",
+      "control_mode": "managed",
+      "workspace_root": "C:\\workspaces\\tower",
+      "repo_root": "C:\\workspaces\\tower",
+      "branch_name": "feature/conflict-radar",
+      "confidence": "certain",
+      "process": {
+        "executable_path": "claude-code",
+        "pid": 4101,
+        "started_at": "2026-03-06T17:55:00Z",
+        "workspace_root": "C:\\workspaces\\tower",
+        "terminal_id": "wt-2"
+      },
+      "terminal": {
+        "program": "Windows Terminal",
+        "window_session": "wt-2",
+        "device_name": "conpty",
+        "columns": 140,
+        "rows": 40
+      },
+      "lifecycle": "active",
+      "activity": "running",
+      "attention": "info",
+      "task_excerpt": "Prototype conflict detector against changed file sets.",
+      "pending_action_count": 0,
+      "conflict_count": 1,
+      "last_activity_at": "2026-03-06T18:01:30Z",
+      "summary_excerpt": "Shares repo context with another managed session.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_terminal",
+          "approve",
+          "deny",
+          "respond",
+          "inject_command",
+          "park",
+          "resume"
+        ]
+      }
+    },
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M03",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R03",
+      "adapter": "copilot",
+      "tool": "copilot-cli",
+      "adapter_ref": "observed:copilot-cli:3",
+      "control_mode": "observed",
+      "workspace_root": "C:\\workspaces\\service-a",
+      "repo_root": "C:\\workspaces\\service-a",
+      "branch_name": "feature/api-cleanup",
+      "confidence": "medium",
+      "process": {
+        "executable_path": "copilot",
+        "pid": 5100,
+        "started_at": "2026-03-06T17:40:00Z",
+        "workspace_root": "C:\\workspaces\\service-a",
+        "terminal_id": "pwsh-1"
+      },
+      "terminal": {
+        "program": "PowerShell",
+        "window_session": "pwsh-1",
+        "device_name": "tty",
+        "columns": 120,
+        "rows": 36
+      },
+      "lifecycle": "discovered",
+      "activity": "running",
+      "attention": "none",
+      "task_excerpt": "Observed CLI session updating API examples.",
+      "pending_action_count": 0,
+      "conflict_count": 0,
+      "last_activity_at": "2026-03-06T18:00:40Z",
+      "summary_excerpt": "Observe-only session.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_terminal"
+        ]
+      }
+    },
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M04",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R04",
+      "adapter": "vscode",
+      "tool": "vscode",
+      "adapter_ref": "observed:vscode:2",
+      "control_mode": "observed",
+      "workspace_root": "C:\\workspaces\\service-b",
+      "repo_root": "C:\\workspaces\\service-b",
+      "branch_name": "main",
+      "confidence": "high",
+      "process": {
+        "executable_path": "Code.exe",
+        "pid": 6100,
+        "started_at": "2026-03-06T17:10:00Z",
+        "workspace_root": "C:\\workspaces\\service-b",
+        "terminal_id": "code-1"
+      },
+      "terminal": {
+        "program": "VS Code",
+        "window_session": "code-1",
+        "device_name": "window",
+        "columns": 0,
+        "rows": 0
+      },
+      "lifecycle": "discovered",
+      "activity": "waiting_external",
+      "attention": "info",
+      "task_excerpt": "Waiting on extension host diagnostics.",
+      "pending_action_count": 0,
+      "conflict_count": 0,
+      "last_activity_at": "2026-03-06T17:59:00Z",
+      "summary_excerpt": "Observed-first VS Code session.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_ide"
+        ]
+      }
+    },
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M05",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R05",
+      "adapter": "wsl",
+      "tool": "wsl",
+      "adapter_ref": "observed:wsl:ubuntu",
+      "control_mode": "observed",
+      "workspace_root": "C:\\workspaces\\infra",
+      "repo_root": "C:\\workspaces\\infra",
+      "branch_name": "feature/terraform-audit",
+      "confidence": "low",
+      "process": {
+        "executable_path": "wsl.exe",
+        "pid": 7100,
+        "started_at": "2026-03-06T17:00:00Z",
+        "workspace_root": "C:\\workspaces\\infra",
+        "terminal_id": "wt-3"
+      },
+      "terminal": {
+        "program": "Windows Terminal",
+        "window_session": "wt-3",
+        "device_name": "conpty",
+        "columns": 140,
+        "rows": 40
+      },
+      "lifecycle": "detached",
+      "activity": "unknown",
+      "attention": "info",
+      "task_excerpt": "Observed-only WSL session after reconnect gap.",
+      "pending_action_count": 0,
+      "conflict_count": 0,
+      "last_activity_at": "2026-03-06T17:50:00Z",
+      "summary_excerpt": "Confidence drops after a gap instead of guessing.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_terminal"
+        ]
+      }
+    },
+    {
+      "session_id": "01JDW6R8E8JQK8B2Q6BK5Q4M06",
+      "runtime_id": "01JDW6R8E8JQK8B2Q6BK5Q4R06",
+      "adapter": "claude",
+      "tool": "claude-code",
+      "adapter_ref": "managed:claude",
+      "control_mode": "managed",
+      "workspace_root": "C:\\workspaces\\docs",
+      "repo_root": "C:\\workspaces\\docs",
+      "branch_name": "feature/park-resume",
+      "confidence": "certain",
+      "process": {
+        "executable_path": "claude-code",
+        "pid": 4102,
+        "started_at": "2026-03-06T16:45:00Z",
+        "workspace_root": "C:\\workspaces\\docs",
+        "terminal_id": "wt-4"
+      },
+      "terminal": {
+        "program": "Windows Terminal",
+        "window_session": "wt-4",
+        "device_name": "conpty",
+        "columns": 140,
+        "rows": 40
+      },
+      "lifecycle": "parked",
+      "activity": "idle",
+      "attention": "needs_user",
+      "task_excerpt": "Parked bundle ready to resume after design review.",
+      "pending_action_count": 0,
+      "conflict_count": 0,
+      "last_activity_at": "2026-03-06T17:45:00Z",
+      "summary_excerpt": "Parked-session bundle fixture seed.",
+      "capabilities": {
+        "supported": [
+          "observe",
+          "jump_terminal",
+          "resume"
+        ]
+      }
+    }
+  ]
+}

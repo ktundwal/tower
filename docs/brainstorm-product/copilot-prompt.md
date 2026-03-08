@@ -9,7 +9,7 @@ You are co-architect on an open-source project called Tower, a supervisor cockpi
 Read all files in C:/github/tower/docs/ and C:/github/tower/README.md to get full context. The key files are:
 - README.md - problem statement, architecture, adapter interface
 - docs/brainstorm-product/session-context.md - full design session transcript and decisions
-- docs/brainstorm-product/research.md - Entire.io and Agency CLI analysis, Claude Code hook system
+- docs/brainstorm-product/research.md - Entire.io analysis, Claude Code hook system
 - docs/brainstorm-product/review-gemini.md - Gemini 3 Pro architectural review
 - docs/brainstorm-product/review-gpt.md - GPT 5.4 architectural review (the most thorough one)
 - docs/brainstorm-product/gpt-questions.md - your top 10 architecture questions

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tower://schemas/event-envelope-v1",
+  "title": "Tower Event Envelope v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "kind",
+    "session_id",
+    "control_mode",
+    "source",
+    "occurred_at",
+    "ingested_at",
+    "confidence",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "v1"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "session.discovered",
+        "session.started",
+        "session.reconnected",
+        "session.ended",
+        "state.changed",
+        "activity.excerpt.updated",
+        "approval.requested",
+        "approval.resolved",
+        "command.sent",
+        "command.applied",
+        "conflict.detected",
+        "conflict.resolved",
+        "summary.updated",
+        "session.parked",
+        "session.resumed",
+        "error.reported"
+      ]
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_id": {
+      "type": "string"
+    },
+    "control_mode": {
+      "type": "string",
+      "enum": [
+        "managed",
+        "observed"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "adapter",
+        "tool",
+        "host"
+      ],
+      "properties": {
+        "adapter": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "host": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "certain",
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "causation_id": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
