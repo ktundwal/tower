@@ -27,8 +27,8 @@ Local control plane for developers running multiple AI coding agents on one mach
 
 ## Session Protocol
 
-- **Start**: Read `PROGRESS.md` before starting work.
-- **End**: Update `PROGRESS.md` before ending a session or when context is getting large.
+- **Start**: Read `PROGRESS.md` before starting work. Scan recent retros in `docs/retro/sessions/` if debugging a recurring issue.
+- **End**: Run `/wrap`. This updates PROGRESS.md, writes a session retro, and compounds learnings into this file.
 
 ## Architecture Reference
 
