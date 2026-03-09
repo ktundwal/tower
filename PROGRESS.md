@@ -20,6 +20,7 @@ Not started. Setup complete — ready for implementation.
 - Session commands (`/start`, `/wrap`) — note: may need CLI restart to register
 - Go 1.26.1 installed
 - 5-slice implementation plan reviewed and approved
+- Fixed `.claude/settings.json` — replaced invalid `PreCommit` hook with `PreToolUse` + `Bash(git commit*)` matcher
 
 ## What's Next
 

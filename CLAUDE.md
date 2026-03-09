@@ -18,6 +18,7 @@ Local control plane for developers running multiple AI coding agents on one mach
 - Commands (`.claude/commands/`) are user-invoked via `/name`. Skills (`.claude/skills/`) are agent-loaded context. Don't mix them up.
 - Default to the simpler option. Let the user ask for more complexity if needed.
 - Go binary lives at `/c/Program Files/Go/bin/go.exe` — prepend to PATH in bash: `export PATH="/c/Program Files/Go/bin:$PATH"`
+- `PreCommit` is NOT a valid Claude Code hook event. To gate `git commit`, use `PreToolUse` with matcher `Bash(git commit*)`.
 
 ## Go Conventions
 
