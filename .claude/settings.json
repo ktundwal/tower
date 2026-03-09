@@ -1,0 +1,42 @@
+{
+  "hooks": {
+    "PreCommit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd C:/github/tower && go test ./... && go vet ./..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd C:/github/tower && gofmt -l -w $(echo $CLAUDE_TOOL_ARG_FILE_PATH | grep -E '\\.go$') 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(go test *)",
+      "Bash(go vet *)",
+      "Bash(go build *)",
+      "Bash(go run *)",
+      "Bash(gofmt *)",
+      "Bash(git *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(cat *)",
+      "Bash(copilot *)",
+      "Read",
+      "Glob",
+      "Grep"
+    ]
+  }
+}
