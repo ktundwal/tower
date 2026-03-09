@@ -14,6 +14,11 @@ Local control plane for developers running multiple AI coding agents on one mach
 - **Plan mode for new slices**: Use plan mode (`shift+tab`) before starting any new implementation slice. Get approval before writing code.
 - **Tests must pass before committing**: `go test ./... && go vet ./...` must pass. Do not commit broken code.
 
+## Learned Rules
+- Commands (`.claude/commands/`) are user-invoked via `/name`. Skills (`.claude/skills/`) are agent-loaded context. Don't mix them up.
+- Default to the simpler option. Let the user ask for more complexity if needed.
+- Go binary lives at `/c/Program Files/Go/bin/go.exe` — prepend to PATH in bash: `export PATH="/c/Program Files/Go/bin:$PATH"`
+
 ## Go Conventions
 
 - Module: `tower`

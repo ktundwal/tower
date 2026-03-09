@@ -17,7 +17,9 @@ Not started. Setup complete — ready for implementation.
 - Event envelope schema (`schemas/event-envelope-v1.schema.json`)
 - Memory-backed repository (SQLite deferred)
 - Project CLAUDE.md, skills (`/tower-arch`, `/tower-scope`, `/review`), settings
+- Session commands (`/start`, `/wrap`) — note: may need CLI restart to register
 - Go 1.26.1 installed
+- 5-slice implementation plan reviewed and approved
 
 ## What's Next
 
@@ -33,3 +35,4 @@ None.
 ## Decisions
 
 - Go module version in go.mod says 1.22 but Go 1.26.1 is installed. May need to update go.mod.
+- Skills vs commands: skills are agent-loaded context, commands are user-invoked slash commands.
