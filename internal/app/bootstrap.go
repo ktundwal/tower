@@ -11,6 +11,7 @@ import (
 
 	"tower/internal/contracts"
 	"tower/internal/core"
+	"tower/internal/daemon"
 	towerruntime "tower/internal/runtime"
 	"tower/internal/store"
 	"tower/internal/ui"
@@ -21,6 +22,7 @@ type Bootstrap struct {
 	Store  store.Repository
 	Engine *core.Engine
 	UI     *ui.Stub
+	Daemon *daemon.Daemon
 }
 
 type DemoFixture struct {
@@ -132,6 +134,20 @@ func (bootstrap *Bootstrap) runManaged(ctx context.Context, stdout io.Writer, ar
 		return err
 	}
 
+	// 1. Start daemon if not already running.
+	if bootstrap.Daemon == nil {
+		lockPath := filepath.Join(bootstrap.Layout.RootDir, "daemon.lock")
+		d, err := daemon.Start(lockPath)
+		if err != nil {
+			return fmt.Errorf("start daemon: %w", err)
+		}
+		bootstrap.Daemon = d
+
+		// Upgrade engine to use ManagedManager backed by the daemon.
+		bootstrap.Engine.SetRuntime(towerruntime.NewManagedManager(d))
+	}
+
+	// 2. Create session via engine. ManagedManager handles daemon registration + hook config.
 	snapshot, err := bootstrap.Engine.LaunchManagedSession(
 		ctx,
 		"claude",
@@ -143,6 +159,9 @@ func (bootstrap *Bootstrap) runManaged(ctx context.Context, stdout io.Writer, ar
 	if err != nil {
 		return err
 	}
+
+	fmt.Fprintf(stdout, "daemon listening on port %d\n", bootstrap.Daemon.Port())
+	fmt.Fprintf(stdout, "session %s registered\n", snapshot.SessionID)
 
 	return bootstrap.UI.RenderManagedLaunch(stdout, ui.ManagedLaunchView{
 		Layout:   bootstrap.Layout,

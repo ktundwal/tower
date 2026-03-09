@@ -1,0 +1,161 @@
+[
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "PreToolUse",
+      "permission_mode": "default",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "tool_input": {
+        "content": "This is a test file for hook implementation testing.\nCreated: 2026-03-08\n",
+        "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
+      },
+      "tool_name": "Write",
+      "tool_use_id": "toolu_016XysNTGn99cPpTLkgk54iR",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "pre-tool-use",
+    "method": "POST",
+    "n": 1,
+    "path": "/hooks/SMOKE-1773023009/pre-tool-use",
+    "risk_class": "workspace_write",
+    "timestamp": "2026-03-09T02:24:12.043474Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "PermissionRequest",
+      "permission_mode": "default",
+      "permission_suggestions": [
+        {
+          "destination": "session",
+          "mode": "acceptEdits",
+          "type": "setMode"
+        }
+      ],
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "tool_input": {
+        "content": "This is a test file for hook implementation testing.\nCreated: 2026-03-08\n",
+        "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
+      },
+      "tool_name": "Write",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "permission-request",
+    "method": "POST",
+    "n": 2,
+    "path": "/hooks/SMOKE-1773023009/permission-request",
+    "risk_class": "workspace_write",
+    "timestamp": "2026-03-09T02:24:12.0692965Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "PostToolUse",
+      "permission_mode": "default",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "tool_input": {
+        "content": "This is a test file for hook implementation testing.\nCreated: 2026-03-08\n",
+        "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
+      },
+      "tool_name": "Write",
+      "tool_response": {
+        "content": "This is a test file for hook implementation testing.\nCreated: 2026-03-08\n",
+        "filePath": "C:\\tmp\\smoke-test\\test-hook.txt",
+        "originalFile": null,
+        "structuredPatch": [],
+        "type": "create"
+      },
+      "tool_use_id": "toolu_016XysNTGn99cPpTLkgk54iR",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "post-tool-use",
+    "method": "POST",
+    "n": 3,
+    "path": "/hooks/SMOKE-1773023009/post-tool-use",
+    "risk_class": "workspace_write",
+    "timestamp": "2026-03-09T02:24:12.1944321Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "PreToolUse",
+      "permission_mode": "default",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "tool_input": {
+        "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
+      },
+      "tool_name": "Read",
+      "tool_use_id": "toolu_01WX3ScMdCUbzquEBzGTurCc",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "pre-tool-use",
+    "method": "POST",
+    "n": 4,
+    "path": "/hooks/SMOKE-1773023009/pre-tool-use",
+    "risk_class": "read_only",
+    "timestamp": "2026-03-09T02:24:14.6828416Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "PostToolUse",
+      "permission_mode": "default",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "tool_input": {
+        "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
+      },
+      "tool_name": "Read",
+      "tool_response": {
+        "file": {
+          "content": "This is a test file for hook implementation testing.\nCreated: 2026-03-08\n",
+          "filePath": "C:\\tmp\\smoke-test\\test-hook.txt",
+          "numLines": 3,
+          "startLine": 1,
+          "totalLines": 3
+        },
+        "type": "text"
+      },
+      "tool_use_id": "toolu_01WX3ScMdCUbzquEBzGTurCc",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "post-tool-use",
+    "method": "POST",
+    "n": 5,
+    "path": "/hooks/SMOKE-1773023009/post-tool-use",
+    "risk_class": "read_only",
+    "timestamp": "2026-03-09T02:24:14.7242625Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "Stop",
+      "last_assistant_message": "File created and read back successfully. Both the `Write` and `Read` tool calls went through \u2014 your hook should have fired on both. What did you see on the hook side?",
+      "permission_mode": "default",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "stop_hook_active": false,
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "stop",
+    "method": "POST",
+    "n": 6,
+    "path": "/hooks/SMOKE-1773023009/stop",
+    "risk_class": "unknown",
+    "timestamp": "2026-03-09T02:24:17.5132577Z"
+  },
+  {
+    "body": {
+      "cwd": "C:\\tmp\\smoke-test",
+      "hook_event_name": "Notification",
+      "message": "Claude is waiting for your input",
+      "notification_type": "idle_prompt",
+      "session_id": "c934814a-5f96-412b-8973-b104283c5141",
+      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+    },
+    "event_slug": "notification",
+    "method": "POST",
+    "n": 7,
+    "path": "/hooks/SMOKE-1773023009/notification",
+    "risk_class": "unknown",
+    "timestamp": "2026-03-09T02:25:17.5403237Z"
+  }
+]

@@ -28,6 +28,10 @@ func NewEngine(repository store.Repository, runtime towerruntime.Manager) *Engin
 	}
 }
 
+func (engine *Engine) SetRuntime(runtime towerruntime.Manager) {
+	engine.runtime = runtime
+}
+
 func (engine *Engine) RegisterAdapter(name string, adapter contracts.SessionAdapter) {
 	engine.adapters[name] = adapter
 }
