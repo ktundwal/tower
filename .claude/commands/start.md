@@ -1,0 +1,1 @@
+Read PROGRESS.md. Load /tower-arch and /tower-scope. Resume work from where the last session left off. State what slice you're on, what's done, and what's next before writing any code.
