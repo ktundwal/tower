@@ -11,7 +11,7 @@
       },
       "tool_name": "Write",
       "tool_use_id": "toolu_016XysNTGn99cPpTLkgk54iR",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "pre-tool-use",
     "method": "POST",
@@ -38,7 +38,7 @@
         "file_path": "C:\\tmp\\smoke-test\\test-hook.txt"
       },
       "tool_name": "Write",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "permission-request",
     "method": "POST",
@@ -66,7 +66,7 @@
         "type": "create"
       },
       "tool_use_id": "toolu_016XysNTGn99cPpTLkgk54iR",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "post-tool-use",
     "method": "POST",
@@ -86,7 +86,7 @@
       },
       "tool_name": "Read",
       "tool_use_id": "toolu_01WX3ScMdCUbzquEBzGTurCc",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "pre-tool-use",
     "method": "POST",
@@ -116,7 +116,7 @@
         "type": "text"
       },
       "tool_use_id": "toolu_01WX3ScMdCUbzquEBzGTurCc",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "post-tool-use",
     "method": "POST",
@@ -133,7 +133,7 @@
       "permission_mode": "default",
       "session_id": "c934814a-5f96-412b-8973-b104283c5141",
       "stop_hook_active": false,
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "stop",
     "method": "POST",
@@ -149,7 +149,7 @@
       "message": "Claude is waiting for your input",
       "notification_type": "idle_prompt",
       "session_id": "c934814a-5f96-412b-8973-b104283c5141",
-      "transcript_path": "C:\\Users\\katundwa\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
+      "transcript_path": "C:\\Users\\testuser\\.claude\\projects\\C--tmp-smoke-test\\c934814a-5f96-412b-8973-b104283c5141.jsonl"
     },
     "event_slug": "notification",
     "method": "POST",

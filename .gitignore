@@ -26,3 +26,11 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Go binaries
+*.exe
+*.exe~
+
+# Tower smoke test artifacts
+tower-smoke-capture.jsonl
+tmpsmoke-test/

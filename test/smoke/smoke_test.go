@@ -163,7 +163,8 @@ func TestSmokeClaudeHookIntegration(t *testing.T) {
 	}
 
 	// --- 7. Save captured events to test/fixtures/hooks/ ---
-	fixtureDir := filepath.Join("C:\\github", "tower", "test", "fixtures", "hooks")
+	// Save relative to the repo root (two levels up from test/smoke/).
+	fixtureDir := filepath.Join("..", "..", "test", "fixtures", "hooks")
 	if err := os.MkdirAll(fixtureDir, 0755); err != nil {
 		t.Logf("warning: could not create fixture dir: %v", err)
 	} else {
