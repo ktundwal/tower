@@ -25,6 +25,11 @@ Local control plane for developers running multiple AI coding agents on one mach
 - Error messages: lowercase, no punctuation, descriptive
 - Package names: short, lowercase, no underscores
 
+## Session Protocol
+
+- **Start**: Read `PROGRESS.md` before starting work.
+- **End**: Update `PROGRESS.md` before ending a session or when context is getting large.
+
 ## Architecture Reference
 
 - Load `/tower-arch` before any design or implementation work
@@ -42,3 +47,4 @@ go vet ./...
 ## Commit Convention
 
 Conventional commits: `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:` with optional `(scope):`
+No co-author lines. No AI attribution in commits.
